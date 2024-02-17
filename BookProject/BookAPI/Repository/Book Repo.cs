@@ -16,7 +16,7 @@ namespace BookAPI.Repository
                 DynamicParameters Para = new DynamicParameters();
                 Para.Add("@Action", "a");
                 Para.Add("@ID", i);
-                var _Book = (Book)_con.Connect().Query<Book>("SP_Book", Para, commandType: System.Data.CommandType.StoredProcedure);
+                var _Book = _con.Connect().QueryFirstOrDefault<Book>("SP_Book", Para, commandType: System.Data.CommandType.StoredProcedure);
                 return _Book;
             }
             catch(Exception ex)
@@ -52,6 +52,7 @@ namespace BookAPI.Repository
                 Para.Add("@BookName", _Obj.Name);
                 Para.Add("@Author", _Obj.Author);
                 Para.Add("@Price", _Obj.Price);
+                Para.Add("@ID", _Obj.ID);
                 var x = _con.Connect().Execute("SP_Book", Para, commandType: System.Data.CommandType.StoredProcedure);
                 return x;
 

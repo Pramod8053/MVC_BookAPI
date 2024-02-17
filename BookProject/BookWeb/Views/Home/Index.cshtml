@@ -1,0 +1,42 @@
+﻿@model List<EntityLibrary.Entity.Book> 
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+<table class="table table-bordered">
+    <tr>
+        <td>
+            sl
+        </td>
+        <td>
+            Book Name
+        </td>
+        <td>
+            Author
+        </td>
+        <td>
+            Price
+        </td>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.ID  
+                    </td>
+                    <td>
+                        @item.Name  
+                    </td>
+                    <td>
+                        @item.Author  
+                    </td>
+                    <td>
+                        @item.Price  
+                    </td>
+                </tr>
+            } 
+</table>
+</div>
+
+
