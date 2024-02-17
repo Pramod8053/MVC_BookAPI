@@ -71,3 +71,13 @@
 }
 
 </table>
+<div>
+    <table>
+        <tr>
+            <td>Select Any One</td>
+            <td>
+                @Html.DropDownList("ID", new SelectList(Model, "ID", "Name"),new { @class = "form-control custom-dropdown" })
+            </td>
+        </tr>
+    </table>
+</div>
